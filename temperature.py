@@ -40,8 +40,27 @@ class ConverterGUI:
         
             self.root = root
             self.root.title("Temperature Converter")
-            self.root.geometry("500x400")    
+            self.root.geometry("500x400")
+            
+            self.converter = TemperatureConverter()
+            
+            self.STYLES = {
+                        "bg_color": "#f0f0f0",
+                        "button_bg": "#4a7a8c",
+                        "button_fg": "white",
+                        "error_color": "red",
+                        "success_color": "green",
+                        "main_button_yellow": "#ffcc00",
+                        "main_button_pink": "#ff66b2"
+                    }            
 
             
 
-        
+            self.root.configure(bg=self.STYLES["bg_color"])
+            # Create a container frame to stack all screens
+            self.container = ttk.Frame(root)
+            self.container.pack(side="top", fill="both", expand=True)
+            self.container.grid_rowconfigure(0, weight=1)
+            self.container.grid_columnconfigure(0, weight=1)            
+            
+                    
